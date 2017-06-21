@@ -1,0 +1,62 @@
+<%= form_with(model: asset, local: true) do |form| %>
+  <% if asset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
+
+      <ul>
+      <% asset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand, id: :asset_brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_name %>
+    <%= form.text_field :product_name, id: :asset_product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model, id: :asset_model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year, id: :asset_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purchased_date %>
+    <%= form.date_select :purchased_date, id: :asset_purchased_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :asset_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shop_name %>
+    <%= form.text_field :shop_name, id: :asset_shop_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :has_warranty %>
+    <%= form.check_box :has_warranty, id: :asset_has_warranty %>
+  </div>
+
+  <div class="field">
+    <%= form.label :warranty_void_date %>
+    <%= form.date_select :warranty_void_date, id: :asset_warranty_void_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

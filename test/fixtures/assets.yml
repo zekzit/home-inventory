@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  product_name: MyString
+  model: MyString
+  year: 
+  purchased_date: 2017-06-21
+  price: 9.99
+  shop_name: MyString
+  has_warranty: false
+  warranty_void_date: 2017-06-21
+
+two:
+  brand: MyString
+  product_name: MyString
+  model: MyString
+  year: 
+  purchased_date: 2017-06-21
+  price: 9.99
+  shop_name: MyString
+  has_warranty: false
+  warranty_void_date: 2017-06-21

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MM's Home Inventory</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">MM&apos;s Home Inventory</a>
+        <ul id="nav-mobile" class="right">
+          <li>
+            <%= link_to "Assets", controller: 'assets', action: 'index' %>
+            <%= link_to "+NEW", controller: 'assets', action: 'new' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+
+</html>
