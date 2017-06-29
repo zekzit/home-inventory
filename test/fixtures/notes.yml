@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset: one
+  body: MyText
+  timestamp: 2017-06-29 17:35:03
+
+two:
+  asset: two
+  body: MyText
+  timestamp: 2017-06-29 17:35:03

@@ -45,5 +45,31 @@
   <%= @asset.warranty_void_date %>
 </p>
 
+<h2>Notes</h2>
+<% @asset.notes.each do |note| %>
+  <p>
+    <strong>Note:</strong>
+    <%= note.body %>
+  </p>
+
+  <p>
+    <%= link_to 'Destroy Comment', [note.asset, note],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+ 
+<h2>Add a note:</h2>
+<%= form_for([@asset, @asset.notes.build]) do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_asset_path(@asset) %> |
 <%= link_to 'Back', assets_path %>
