@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :asset_categories
   resources :assets do
     resources :notes
   end

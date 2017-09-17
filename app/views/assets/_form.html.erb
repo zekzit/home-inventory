@@ -12,6 +12,15 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :asset_category %>
+    <%= form.select(:asset_category) do %>
+      <% @asset_categories.each do |c| -%>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= form.label :brand %>
     <%= form.text_field :brand, id: :asset_brand %>
   </div>

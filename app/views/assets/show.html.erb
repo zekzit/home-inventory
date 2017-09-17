@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<% if @asset.asset_category %>
+<p>
+  <strong>Category:</strong>
+  <%= @asset.asset_category.name %>
+</p>
+<% end %>
+
 <p>
   <strong>Brand:</strong>
   <%= @asset.brand %>
@@ -43,6 +50,11 @@
 <p>
   <strong>Warranty void date:</strong>
   <%= @asset.warranty_void_date %>
+</p>
+
+<p>
+  <strong>Cost Per Day:</strong>
+  <%= number_to_currency @asset.cost_per_day, format: '%n %u', unit: 'บาท/วัน' %>
 </p>
 
 <h2>Notes</h2>

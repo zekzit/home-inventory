@@ -1,0 +1,27 @@
+<%= form_with(model: asset_category, local: true) do |form| %>
+  <% if asset_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(asset_category.errors.count, "error") %> prohibited this asset_category from being saved:</h2>
+
+      <ul>
+      <% asset_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :asset_category_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :asset_category_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

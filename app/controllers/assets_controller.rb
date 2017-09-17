@@ -14,11 +14,13 @@ class AssetsController < ApplicationController
 
   # GET /assets/new
   def new
+    @asset_categories = AssetCategory.all
     @asset = Asset.new
   end
-
+  
   # GET /assets/1/edit
   def edit
+    @asset_categories = AssetCategory.all
   end
 
   # POST /assets

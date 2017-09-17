@@ -28,7 +28,10 @@
         <div class="card-content">
           <div>
             Warranty left:
-            <%= (asset.warranty_void_date - DateTime.now).to_i %> days
+            <%= (asset.warranty_void_date - DateTime.now).to_i > 0 ?  (asset.warranty_void_date - DateTime.now).to_i.to_s + ' days' : 'VOID'%>
+            <br/>
+            Cost per day:
+            <%= number_to_currency asset.cost_per_day, :unit => ' บาท', :format => '%n%u' %>
           </div>
           <div class="right-align price">฿
             <%=asset.price%>

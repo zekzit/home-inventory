@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629103503) do
+ActiveRecord::Schema.define(version: 20170916133931) do
+
+  create_table "asset_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "assets", force: :cascade do |t|
     t.string "brand"
@@ -24,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170629103503) do
     t.date "warranty_void_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "asset_category_id"
+    t.index ["asset_category_id"], name: "index_assets_on_asset_category_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -33,6 +42,15 @@ ActiveRecord::Schema.define(version: 20170629103503) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["asset_id"], name: "index_notes_on_asset_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
